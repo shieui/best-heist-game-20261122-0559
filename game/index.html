@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Velvet Vault — a heist game</title>
+<meta name="description" content="The Velvet Vault: a top-down stealth heist at the Marlowe Gallery. Steal the jewel, dodge the vision cones, slip out before the alarm hits 100.">
+<link rel="icon" href="data:,">
+<style>
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #0b0d12; }
+  #wrap { min-height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 12px; box-sizing: border-box; }
+  #game { display: block; width: min(96vw, calc((100vh - 64px) * 1.5)); height: auto; background: #10131a; box-shadow: 0 0 0 1px #2a2f3d, 0 18px 60px rgba(0,0,0,0.6); }
+  #hint { color: #8a93a6; font: 13px system-ui, sans-serif; margin: 0; text-align: center; }
+  #hint b { color: #c9a227; font-weight: 600; }
+  /* Read aloud, never shown: the status line screen readers announce. */
+  #status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+</style>
+</head>
+<body>
+<div id="wrap">
+  <canvas id="game" aria-label="The Velvet Vault: a top-down stealth heist game. Move with WASD or arrows, sneak with Shift, dash with Space, throw a coin with a mouse click, hold E to grab the jewel."></canvas>
+  <p id="hint"><b>WASD / arrows</b> move &nbsp;·&nbsp; <b>Shift</b> sneak &nbsp;·&nbsp; <b>Space</b> dash &nbsp;·&nbsp; <b>Click</b> throw a coin &nbsp;·&nbsp; <b>E</b> grab the jewel &nbsp;·&nbsp; <b>M</b> mute</p>
+</div>
+<p id="status" role="status" aria-live="polite"></p>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
